@@ -105,7 +105,7 @@ const Home = (props) => {
       {/* About Section */}
       <section className={`setHeading text-${props.mode === "light" ? "black bgC1" : "white bgC2"} flex items-center justify-center flex-col p-2 scroll-mt-12 lg:scroll-mt-20`} id="allAboutMe">
         <div>
-          <h1 className='text-2xl md:text-4xl font-bold m-4'>About Me</h1>
+          <h1 className='text-2xl md:text-4xl font-bold mt-4 max-lg:-mb-6'>About Me</h1>
         </div>
         <section className="abtContainer flex lg:flex-row flex-col-reverse items-center justify-center p-2">
           <section className="abtLeftSec flex justify-center items-center flex-col max-w-[700px]">
@@ -129,7 +129,7 @@ const Home = (props) => {
             <Link to={myResume} className={`btn navBar1 text-black`} target="_blank">Resume</Link>
           </section>
 
-          <section className="abtRightSec flex max-w-[350px] lg:ml-10">
+          <section className="abtRightSec flex max-w-[350px] lg:ml-10 lg:-mt-10">
             <img src={myImg} alt="Unable to render" className='w-44 lg:w-72 lg:h-auto h-52 lg:mb-14 aspect-[2/3] object-contain' />
           </section>
         </section>

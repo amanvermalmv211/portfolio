@@ -27,14 +27,14 @@ function App() {
     document.body.style.background = "#fcfcf2";
   }
   else {
-    document.body.style.background = 'black';
+    document.body.style.background = '#191919';
   }
 
   const toggleMode = () => {
     if (mode === 'light') {
       localStorage.setItem("mode", "dark");
       setMode("dark");
-      document.body.style.background = 'black';
+      document.body.style.background = '#191919';
     }
     else {
       localStorage.setItem("mode", "light");

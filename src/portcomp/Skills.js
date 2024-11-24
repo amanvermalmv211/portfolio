@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import mongo from '../Images/mongo.png';
 
 import '../App.css';
 
@@ -72,7 +73,7 @@ const Skills = (props) => {
 
           <SwiperSlide className='bg-center bg-cover navBar1 rounded-xl'>
             <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src="https://viget.imgix.net/mongo-logo.png?auto=format%2Ccompress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1280&ixlib=php-2.1.1&q=90&w=1280&s=a153c7c80f42ab1e7db7fd2b6a27ab3b" alt='MongoDB' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={mongo} alt='MongoDB' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[2px_3px_3px_rgba(0,0,0,0.8)]'>MongoDB</p>
             </div>
           </SwiperSlide>

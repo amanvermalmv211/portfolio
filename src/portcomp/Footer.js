@@ -37,7 +37,7 @@ const Footer = (props) => {
                     </section>
                 </section>
 
-                <section className="copyRights m-1 text-sm text-center">2023 &copy; Aman's Protfolio All rights reserved</section>
+                <section className="copyRights m-1 text-sm text-center">2024 &copy; Aman's Protfolio All rights reserved</section>
             </footer>
         </>
     )
