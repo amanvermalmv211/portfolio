@@ -13,11 +13,11 @@ const Footer = (props) => {
                             <h1 className='font-bold text-xl'>Get In Touch :</h1>
                         </div>
 
-                        <Link to="https://www.linkedin.com/in/aman-verma-770ab5252" target="_blank"><i className="fa fa-linkedin-square touchLink my-2 mx-3 cursor-pointer text-blue-600 hover:scale-150" aria-hidden="true"></i></Link>
-                        <Link to="mailto:amanvermalmv211@gmail.com" target="_blank"><i className="fa fa-envelope touchLink my-2 mx-3 cursor-pointer text-yellow-500 hover:scale-150" aria-hidden="true"></i></Link>
-                        <Link to="https://wa.me/916306805527" target="_blank"><i className="fa fa-whatsapp touchLink my-2 mx-3 cursor-pointer text-green-500 hover:scale-150" aria-hidden="true"></i></Link>
-                        <Link to="https://www.instagram.com/invites/contact/?i=1ele9i6x7lf2r&utm_content=40gsjzh" target="_blank"><i className="fa fa-instagram touchLink my-2 mx-3 cursor-pointer text-[#e36ac5] hover:scale-150" aria-hidden="true"></i></Link>
-                        <Link to="https://www.facebook.com/profile.php?id=100011377276805" target="_blank"><i className="fa fa-facebook-official touchLink my-2 mx-3 cursor-pointer text-blue-700 hover:scale-150" aria-hidden="true"></i></Link>
+                        <Link to="https://www.linkedin.com/in/aman-verma-770ab5252" target="_blank"><i className="fa fa-linkedin-square touchLink my-2 mx-3 cursor-pointer text-blue-600 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
+                        <Link to="mailto:amanvermalmv211@gmail.com" target="_blank"><i className="fa fa-envelope touchLink my-2 mx-3 cursor-pointer text-yellow-500 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
+                        <Link to="https://wa.me/916306805527" target="_blank"><i className="fa fa-whatsapp touchLink my-2 mx-3 cursor-pointer text-green-500 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
+                        <Link to="https://www.instagram.com/invites/contact/?i=1ele9i6x7lf2r&utm_content=40gsjzh" target="_blank"><i className="fa fa-instagram touchLink my-2 mx-3 cursor-pointer text-[#e36ac5] hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
+                        <Link to="https://www.facebook.com/profile.php?id=100011377276805" target="_blank"><i className="fa fa-facebook-official touchLink my-2 mx-3 cursor-pointer text-blue-700 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
 
                     </section>
 
