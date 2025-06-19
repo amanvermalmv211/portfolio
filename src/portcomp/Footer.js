@@ -1,46 +1,126 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import myResume from '../pdfs/AmanVerma(Resume).pdf';
-import { HashLink } from 'react-router-hash-link';
+import logo from "../Images/logo.png";
+import { FaFacebook, FaInstagram, FaLinkedin, FaMobileAlt } from "react-icons/fa";
+import { FaLocationDot, FaWhatsapp } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
+import { Link } from "react-router-dom";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
+const FooterLinks = [
+    { name: "Home", link: "/#homesec" },
+    { name: "About", link: "/#allAboutMe" },
+    { name: "Skills", link: "/#mySkills" },
+    { name: "Projects", link: "/project#myEducation" },
+    { name: "Contact", link: "/contact#contact" }
+]
+
+const noteLinks = [
+    {
+        title: "CPP",
+        link: "/cppnotes",
+    },
+    {
+        title: "Java",
+        link: "/javanotes",
+    },
+    {
+        title: "Kotlin",
+        link: "/kotlinnotes",
+    },
+    {
+        title: "Python",
+        link: "/pythonnotes",
+    },
+    {
+        title: "MySQL",
+        link: "/mysqlotes",
+    }
+];
 
 const Footer = (props) => {
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
     return (
-        <>
-            <footer className={`footer flex flex-col items-center justify-center pt-5 text-${props.mode === "light" ? "black bgC1" : "white bgC2"}`}>
-                <section className="twoCont flex lg:flex-row flex-col items-center justify-around w-[100%]">
-                    <section className="socialContact flex flex-wrap items-center justify-center p-2">
-                        <div>
-                            <h1 className='font-bold text-xl'>Get In Touch :</h1>
-                        </div>
+        <div className="text-white bgC1 select-none">
+            {/* company details */}
+            <div className="py-8">
+                <div className={`flex items-center justify-center w-60 mx-auto`} data-aos="zoom-in" data-aos-duration="800">
+                    <img src={logo} alt="portfolio" className={`object-contain w-8 h-8 scale-[6] mx-2 ${props.mode === "light" ? "invert" : "invert-0"}`} />
+                    <span className={`ml-4 font-semibold text-3xl pt-1 font-serif ${props.mode === "light" ? "text-blue-600" : "text-yellow-500"}`}> - Portfolio</span>
+                </div>
+            </div>
 
-                        <Link to="https://www.linkedin.com/in/aman-verma-770ab5252" target="_blank"><i className="fa fa-linkedin-square touchLink my-2 mx-3 cursor-pointer text-blue-600 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
-                        <Link to="mailto:amanvermalmv211@gmail.com" target="_blank"><i className="fa fa-envelope touchLink my-2 mx-3 cursor-pointer text-yellow-500 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
-                        <Link to="https://wa.me/916306805527" target="_blank"><i className="fa fa-whatsapp touchLink my-2 mx-3 cursor-pointer text-green-500 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
-                        <Link to="https://www.instagram.com/invites/contact/?i=1ele9i6x7lf2r&utm_content=40gsjzh" target="_blank"><i className="fa fa-instagram touchLink my-2 mx-3 cursor-pointer text-[#e36ac5] hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
-                        <Link to="https://www.facebook.com/profile.php?id=100011377276805" target="_blank"><i className="fa fa-facebook-official touchLink my-2 mx-3 cursor-pointer text-blue-700 hover:scale-150 transition-all duration-300" aria-hidden="true"></i></Link>
-
-                    </section>
-
-                    <section className="quickLinks flex flex-wrap items-center justify-center my-2">
-                        <div>
-                            <h1 className='font-bold text-xl'>Quick Links :</h1>
-                        </div>
-                        <ul className='flex justify-center items-center flex-wrap'>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/#homesec"}>Home</HashLink></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><Link to={myResume} target="_blank">Resume</Link></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/#allAboutMe"}>About</HashLink></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/#myEducation"}>Education</HashLink></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/#mySkills"}>Skills</HashLink></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/project#myEducation"}>Projects</HashLink></li>
-                            <li className='my-1 mx-3 hover:text-[#e36ac5] hover:scale-110'><HashLink to={"/contact#contact"}>Contact</HashLink></li>
+            {/* Footer Links */}
+            <div className="flex flex-col md:flex-row max-md:items-center justify-around pb-6">
+                <div className="flex items-start justify-between md:justify-around w-2/3">
+                    <div className="">
+                        <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
+                            Important Links
+                        </h1>
+                        <ul className="flex flex-col gap-3">
+                            {FooterLinks.map((link, idx) => (
+                                <Link to={link.link} className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200" key={idx} >
+                                    <span>{link.name}</span>
+                                </Link>
+                            ))}
                         </ul>
-                    </section>
-                </section>
+                    </div>
+                    <div className="">
+                        <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
+                            Notes
+                        </h1>
+                        <ul className="flex flex-col gap-3">
+                            {noteLinks.map((link, idx) => (
+                                <Link to={link.link} className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-200" key={idx} >
+                                    <span>{link.title}</span>
+                                </Link>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
 
-                <section className="copyRights m-1 text-sm text-center">2024 &copy; Aman's Protfolio All rights reserved</section>
-            </footer>
-        </>
-    )
-}
+                {/* social links */}
 
-export default Footer
+                <div className="flex flex-col items-start md:items-center md:w-1/3 w-full max-md:p-4 relative">
+                    <div className="flex items-center gap-6 overflow-hidden">
+                        <Link to="https://www.linkedin.com/in/aman-verma-770ab5252" target="_blank" data-aos="zoom-in" data-aos-duration="1000">
+                            <FaLinkedin size={25} className="text-blue-600" />
+                        </Link>
+                        <Link to="mailto:amanvermalmv211@gmail.com" target="_blank" data-aos="zoom-in" data-aos-duration="1000">
+                            <IoIosMail size={35} className="text-yellow-400" />
+                        </Link>
+                        <Link to="https://wa.me/916306805527" target="_blank" data-aos="zoom-in" data-aos-duration="1000">
+                            <FaWhatsapp size={30} className="text-green-400" />
+                        </Link>
+                        <Link to="https://www.instagram.com/invites/contact/?i=1ele9i6x7lf2r&utm_content=40gsjzh" target="_blank" data-aos="zoom-in" data-aos-duration="1000">
+                            <FaInstagram size={30} className="text-pink-400" />
+                        </Link>
+                        <Link to="https://www.facebook.com/profile.php?id=100011377276805" target="_blank" data-aos="zoom-in" data-aos-duration="1000">
+                            <FaFacebook size={28} className="bg-blue-700 rounded-full" />
+                        </Link>
+                    </div>
+                    <div className="mb-6">
+                        <div className="flex items-center gap-3 mt-3">
+                            <FaMobileAlt />
+                            <Link to="tel:6306805527">6306805527</Link>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <FaLocationDot />
+                            <p>BTM Layout, Bangalore 560076</p>
+                        </div>
+                    </div>
+
+                    <div className="text-sm absolute bottom-0 text-center">&copy; {new Date().getFullYear()} - Aman Portfolio All rights reserved.</div>
+
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Footer;

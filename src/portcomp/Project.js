@@ -1,129 +1,74 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import sbw from '../Images/sbw.png';
+import texteditor from '../Images/texteditor.png';
+import shutterpics from '../Images/shutterpics.png';
+import testimonial from '../Images/testimonial.png';
+import myLiblogo from '../Images/myLiblogo.svg';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const Project = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Projects | Aman's Portfolio";
+    AOS.init();
+    AOS.refresh();
   }, []);
+
+  const projects = [
+    { img: myLiblogo, name: "meriLibrary", heading: "Full Stack (MERN) Project", disc: "A library management platform connecting students with local libraries. Implemented real-time subscription tracking, automated subscription expiry alerts by emails, role-based access, and search functionality based on locality.", link: "https://merilibrary.in" },
+    { img: "https://merilibrary.in/static/media/myLiblogo1.b0e64dfeb23eaa8992aab51d9aebc98c.svg", name: "iTutors", heading: "TypeScript (MERN) Project", disc: "Built a full-stack TypeScript MERN application for iTutors enabling admin to manage student records, track fee payments, update subscription status, and send notifications with role-based access and a clean, responsive UI.", link: "https://merilibrary.in" },
+    { img: shutterpics, name: "Shutter Pics", heading: "Full Stack (MERN) Project", disc: "Developed a portfolio and service booking website for a studio person to showcase his services and streamline client booking. Allowing clients to view photographer availability. Designed a feedback system too.", link: "https://shutterpics.in" },
+    { img: "https://myjewelshop.netlify.app/static/media/favicon-310x310.842bf0fe7d631bae52a5.png", name: "My Jewel Shop", heading: "Full Stack (MERN) Project", disc: "Developed an e-commerce website using the MERN stack which has responsive, user-friendly interface with reusable React components for code efficiency and consistency across the website and created API’s for product management.", link: "https://myjewelshop.netlify.app" },
+    { img: texteditor, name: "Todo List", heading: "TypeScript Front-end Project", disc: "Developed a responsive ToDo List application using React, TypeScript, and Tailwind CSS, featuring task management, state handling, and modern UI design to enhance user experience & demonstrate frontend development proficiency.", link: "https://mytodolist24x7.netlify.app" },
+    { img: "https://myveggiesshop.netlify.app/static/media/logo.66b1baedbf4e98b4c2be.png", name: "My Vegies", heading: "React Front-end Project", disc: "Developed a vegetable listing app using React and Tailwind CSS to explore props drilling and the useContext API, enhancing state management skills & understanding of component communication in React applications.", link: "https://myveggiesshop.netlify.app" },
+    { img: sbw, name: "Shiv Battery Works", heading: "React Front-end Project", disc: "Built a responsive electronic shop web app to explore React Router for seamless navigation. Gained hands on experience in component-based architecture and client-side routing, enhancing skills in modern frontend development.", link: "https://shivbatteryworks.netlify.app" },
+    { img: texteditor, name: "Text Editor", heading: "React Front-end Project", disc: "A text utility web app using React and Tailwind CSS. Features include removing extra spaces, converting text to uppercase/lowercase, word and character count, and clipboard copy functionality. Developed during initial React learning phase.", link: "https://texteditoraman.netlify.app" },
+    { img: "https://s3.amazonaws.com/eventtia/event_logos/18916/medium/expvqmxqaej8ib3copy15942077171594207717.png?1594207717", name: "Mind Maze Quiz", heading: "HTML, CSS and JavaScript", disc: "Focused on dynamic content rendering and user interaction without using any frameworks. Users can select their age group and preferred subject to attempt quizzes. Displays results at the end of the quiz.", link: "https://mindmazequiz.netlify.app" },
+    { img: testimonial, name: "Testimonial Slider", heading: "HTML, CSS and JavaScript", disc: "Created a testimonial to showcase information about various IIT colleges in India. Focused on responsive design and dynamic testimonial sections to highlight college details, enhancing content presentation and user engagement.", link: "https://testimonialsliderdemo.netlify.app" },
+  ]
 
   return (
     <>
-      <section className={`eduSec flex flex-col items-center p-5 text-${props.mode === "light" ? "black" : "white"} scroll-mt-[1500px]`} id="myEducation">
-        <h1 className='text-2xl md:text-4xl font-bold m-4'>My Projects</h1>
-        <p className='text-center m-1 lg:w-[80%]'>Welcome to the heart of my portfolio, I invite you to explore the diverse facets of my skills, passion, and dedication. Each project is a testament to my unwavering commitment to pushing boundaries, solving problems, and translating ideas into tangible realities.</p>
-        {/* <p className='text-center m-1'>Currently pursuing B.Sc.(Hons.) Computer Science from University Of Delhi</p> */}
+      <section className={`flex flex-col items-center p-4 ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} scroll-mt-[1500px]`} id="myEducation">
+        <h1 className='text-3xl md:text-4xl font-bold m-4'>My Projects</h1>
+        <p className='text-justify md:text-center lg:w-4/5 pb-8 text-lg'>Welcome to the heart of my portfolio, I invite you to explore the diverse facets of my skills, passion, and dedication. Each project is a testament to my unwavering commitment to pushing boundaries, solving problems, and translating ideas into tangible realities.</p>
 
-        <section className="grades flex flex-wrap items-center justify-center p-2 m-4">
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo flex justify-center">
-              <img src="https://myjewelshop.netlify.app/static/media/favicon-310x310.842bf0fe7d631bae52a5.png" alt="" className='object-contain w-16' />
-              {/* <i className="fa fa-cutlery fa-3x" aria-hidden="true"></i> */}
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>My Jewel Shop</h3>
-            <p className='m-1'>React JS, Node JS</p>
-            <p className='m-1'>Express, MongoDB</p>
-            <p className='m-1'>Full Stack(MERN) Project</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://myjewelshop.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
 
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo flex justify-center">
-              <img src="https://myveggiesshop.netlify.app/static/media/logo.66b1baedbf4e98b4c2be.png" alt="" className='object-contain w-20 h-12' />
-              {/* <i className="fa fa-cutlery fa-3x" aria-hidden="true"></i> */}
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>My Vegies</h3>
-            <p className='m-1'>React JS, Node JS</p>
-            <p className='m-1'>Express, MongoDB</p>
-            <p className='m-1'>Full Stack(MERN) Project</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://myveggiesshop.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
+        <div className="grades flex flex-wrap items-center justify-center gap-16 p-2 m-4">
 
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo flex justify-center">
-              <img src="https://i.pinimg.com/originals/9a/f8/a5/9af8a55b384c6648ad8020760902fb12.png" alt="" className='object-contain w-12 rounded-full' />
-              {/* <i className="fa fa-cutlery fa-3x" aria-hidden="true"></i> */}
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>Shiv Battery Works</h3>
-            <p className='m-1'>React JS</p>
-            <p className='m-1'>Tailwind CSS</p>
-            <p className='m-1'>Frontend Project</p>
-            {/* <p className='m-1'>(MERN Project)</p> */}
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://shivbatteryworks.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
+          {
+            projects.map((project, idx) => {
+              return <div key={idx} className={`border-t-4 border-b-4 rounded-xl border-double p-2 h-80 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-white" : "border-blue-600 bg-blue-950"} select-none`} data-aos={`${idx % 2 !== 0 ? "flip-left" : "flip-right"}`} data-aos-duration="800">
+                <div className="h-16 w-20 mx-auto">
+                  <img src={project.img} alt="" className={`object-contain w-full h-full ${idx === 0 && "scale-[2.3]"} ${idx === 6 && "scale-[1.6]"} ${idx === 8 && "scale-[1.5]"}`} />
+                </div>
+                <h3 className='font-bold text-lg -mb-1'>{project.name}</h3>
+                <p className='mb-1'>{project.heading}</p>
+                <p className='text-justify text-sm'>{project.disc}</p>
+                <div className={`mt-2 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
+                  <Link to={project.link} target='_blank'>Visit</Link>
+                </div>
+              </div>
+            })
+          }
 
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo">
-              <i className="fa fa-file-text-o fa-3x" aria-hidden="true"></i>
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>Text Editor</h3>
-            <p className='m-1'>React JS</p>
-            <p className='m-1'>Tailwind CSS</p>
-            <p className='m-1'>Basic Text Manipulation</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://texteditoraman.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
-          
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo flex justify-center">
-              <img src="https://s3.amazonaws.com/eventtia/event_logos/18916/medium/expvqmxqaej8ib3copy15942077171594207717.png?1594207717" alt="Net..." className='w-20' />
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>Mind Maze Quiz</h3>
-            <p className='m-1'>HTML, CSS</p>
-            <p className='m-1'>JavaScript</p>
-            <p className='m-1'>Biginner Level Project</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://mindmazequiz.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
-          
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
+          {/* <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500" : "border-blue-600"}`}>
             <div className="schLogo flex justify-center">
               <i class="fa fa-sliders fa-3x" aria-hidden="true"></i>
             </div>
-            <h3 className='font-bold text-[17px] my-2'>Testimonial Slider</h3>
+            <h3 className='font-bold text-[17px] my-2'></h3>
             <p className='m-1'>HTML, CSS</p>
             <p className='m-1'>JavaScript</p>
             <p className='m-1'>Biginner Level Project</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://testimonialsliderdemo.netlify.app" target='_parent'>Visit</Link>
+            <div className={`mt-7 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
+              <Link to="" target='_parent'>Visit</Link>
             </div>
-          </div>
+          </div> */}
 
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo">
-              <i className="fa fa-cutlery fa-3x" aria-hidden="true"></i>
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>Food Ordering</h3>
-            <p className='m-1'>HTML, CSS</p>
-            <p className='m-1'>JavaScript</p>
-            <p className='m-1'>Biginner Level Project</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://mymealorder.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
-
-          <div className={`cards ${props.mode === "light" ? "hover:shadow-2xl" : "hover:shadow-lg hover:shadow-gray-500"}`}>
-            <div className="schLogo">
-              <i className="fa fa-fort-awesome fa-3x" aria-hidden="true"></i>
-            </div>
-            <h3 className='font-bold text-[17px] my-2'>My Portfolio</h3>
-            <p className='m-1'>HTML, CSS</p>
-            <p className='m-1'>JavaScript</p>
-            <p className='m-1'>Out-Dated & don't mantained anymore</p>
-            <div className="gradeLink mt-7 text-blue-700 underline hover:scale-110 transition-all duration-200">
-              <Link to="https://portfolioamanverma.netlify.app" target='_blank'>Visit</Link>
-            </div>
-          </div>
-
-        </section>
+        </div>
       </section>
     </>
   )

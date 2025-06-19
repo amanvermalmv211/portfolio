@@ -23,45 +23,37 @@ function App() {
   }
 
   const [mode, setMode] = useState(localStorage.getItem("mode"));
-  if (localStorage.getItem("mode") === "light") {
-    document.body.style.background = "#fcfcf2";
-  }
-  else {
-    document.body.style.background = '#191919';
-  }
 
   const toggleMode = () => {
     if (mode === 'light') {
       localStorage.setItem("mode", "dark");
       setMode("dark");
-      document.body.style.background = '#191919';
     }
     else {
       localStorage.setItem("mode", "light");
       setMode("light");
-      document.body.style.background = "#fcfcf2";
     }
   }
 
   return (
     <div>
       <Router>
-      <Navbar mode={mode} toggleMode={toggleMode} />
+        <Navbar mode={mode} toggleMode={toggleMode} />
 
-      <Routes>
-        <Route exact path="/" element={<Home mode={mode}/>}></Route>
-        <Route exact path="/project" element={<Project mode={mode}/>}></Route>
-        <Route exact path="/contact" element={<Contact mode={mode}/>}></Route>
-        <Route exact path="/cppnotes" element={<CppNotes mode={mode}/>}></Route>
-        <Route exact path="/javanotes" element={<JavaNotes mode={mode}/>}></Route>
-        <Route exact path="/kotlinnotes" element={<KotlinNotes mode={mode}/>}></Route>
-        <Route exact path="/pythonnotes" element={<PythonNotes mode={mode}/>}></Route>
-        <Route exact path="/mysqlotes" element={<MySQL mode={mode}/>}></Route>
-      </Routes>
+        <Routes>
+          <Route exact path="/" element={<Home mode={mode} />}></Route>
+          <Route exact path="/project" element={<Project mode={mode} />}></Route>
+          <Route exact path="/contact" element={<Contact mode={mode} />}></Route>
+          <Route exact path="/cppnotes" element={<CppNotes mode={mode} />}></Route>
+          <Route exact path="/javanotes" element={<JavaNotes mode={mode} />}></Route>
+          <Route exact path="/kotlinnotes" element={<KotlinNotes mode={mode} />}></Route>
+          <Route exact path="/pythonnotes" element={<PythonNotes mode={mode} />}></Route>
+          <Route exact path="/mysqlotes" element={<MySQL mode={mode} />}></Route>
+        </Routes>
 
-      <Footer mode={mode} />
+        <Footer mode={mode} />
 
-    </Router>
+      </Router>
     </div>
 
   );

@@ -1,22 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
+
+function NavLink({ to, mode, children }) {
+    const location = useLocation();
+    const isActive = location.pathname === to;
+
+    return (
+        <Link
+            to={to}
+            className={`transition-colors px-4 ${isActive
+                ? `${mode === "light" ? "text-blue-600" : "text-yellow-500"} underline`
+                : `${mode === "light" ? "hover:text-blue-600" : "hover:text-yellow-500"}`
+                }`}
+        >
+            {children}
+        </Link>
+    );
+}
 
 const NotesNav = (props) => {
     return (
         <>
-        <nav className={`secNav flex items-center justify-center p-2 md:p-3 font-semibold text-xl text-${props.mode === "light" ? "black" : "white"} ${props.mode === "light" ? 'shadow-[0_0_10px_black]' : 'shadow-[0_0_10px_cyan]'}`}>
-            <div className="secLogo flex items-center justify-center w-32 md:w-[4%]">
-                <img src={props.setImg} alt="Portfolio" className='h-10 w-10' />
-            </div>
+            <nav className={`flex items-center justify-center p-2 md:p-3 font-semibold shadow-md text-xl ${props.mode === "light" ? "text-gray-700 bg-gray-200" : "text-white bg-gray-950"}`}>
+                <div className="secLogo flex items-center justify-center w-20">
+                    <img src={props.setImg} alt="Portfolio" className='h-10 w-full object-contain' />
+                </div>
 
-            <ul className="secNav-list flex items-center justify-center flex-wrap w-96 md:w-[35%]">
-                <li className='px-5'><Link to="/cppnotes">CPP</Link></li>
-                <li className='px-5'><Link to="/javanotes">Java</Link></li>
-                <li className='px-5'><Link to="/kotlinnotes">Kotlin</Link></li>
-                <li className='px-5'><Link to="/pythonnotes">Python</Link></li>
-                <li className='px-5'><Link to="/mysqlotes">MySQL</Link></li>
-            </ul>
-        </nav>
+                <ul className="secNav-list flex items-center justify-center flex-wrap w-96 md:w-[35%]">
+                    <NavLink to="/cppnotes" mode={props.mode}>CPP</NavLink>
+                    <NavLink to="/javanotes" mode={props.mode}>Java</NavLink>
+                    <NavLink to="/kotlinnotes" mode={props.mode}>Kotlin</NavLink>
+                    <NavLink to="/pythonnotes" mode={props.mode}>Python</NavLink>
+                    <NavLink to="/mysqlotes" mode={props.mode}>MySQL</NavLink>
+                </ul>
+            </nav>
 
         </>
     )
