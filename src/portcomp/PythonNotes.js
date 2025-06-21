@@ -10,11 +10,11 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const PythonNotes = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Python Notes | Aman's Portfolio";
         AOS.init();
         AOS.refresh();
     }, []);
@@ -29,6 +29,10 @@ const PythonNotes = (props) => {
         <>
             <NotesNav setImg={python} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16`}>
+                <Helmet>
+                    <title>Python Notes | Aman's Portfolio</title>
+                    <meta name="description" content="Download free, high-quality PDF notes for Python. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
+                </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>Python Notes</h1>
                 <p className='text-justify md:text-lg'>Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library. Python was conceived in the late 1980s by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to the ABC programming language, which was inspired by SETL, capable of exception handling and interfacing with the Amoeba operating system. Its implementation began in December 1989.</p>
 

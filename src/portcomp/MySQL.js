@@ -12,11 +12,11 @@ import DateTimeAlterDrop from '../pdfs/DateTimeAlterDropTruncateViewIndex_AmanVe
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const MySQL = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "MySQL Notes | Aman's Portfolio";
         AOS.init();
         AOS.refresh();
     }, []);
@@ -32,6 +32,10 @@ const MySQL = (props) => {
         <>
             <NotesNav setImg={sql} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16`}>
+                <Helmet>
+                    <title>MySQL Notes | Aman's Portfolio</title>
+                    <meta name="description" content="Download free, high-quality PDF notes for SQL. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
+                </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>MySQL Notes</h1>
                 <p className='text-justify md:text-lg'>MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter My, and "SQL", the acronym for Structured Query Language. A relational database organizes data into one or more data tables in which data may be related to each other; these relations help structure the data. SQL is a language that programmers use to create, modify and extract data from the relational database, as well as control user access to the database. In addition to relational databases and SQL, an RDBMS like MySQL works with an operating system to implement a relational database in a computer's storage system, manages users, allows for network access and facilitates testing database integrity and creation of backups.</p>
 

@@ -14,11 +14,11 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const JavaNotes = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Java Notes | Aman's Portfolio";
         AOS.init();
         AOS.refresh();
     }, []);
@@ -35,6 +35,10 @@ const JavaNotes = (props) => {
         <>
             <NotesNav setImg={java} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16`}>
+                <Helmet>
+                    <title>Java Notes | Aman's Portfolio</title>
+                    <meta name="description" content="Download free, high-quality PDF notes for Java. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
+                </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>Java Notes</h1>
                 <p className='text-justify md:text-lg'>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere meaning that compiled Java code can run on all platforms that support Java without the need to recompile. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture. The Java runtime provides dynamic capabilities (such as reflection and runtime code modification) that are typically not available in traditional compiled languages. Java was originally developed by James Gosling at Sun Microsystems. It was released in May 1995 as a core component of Sun Microsystems' Java platform.</p>
 

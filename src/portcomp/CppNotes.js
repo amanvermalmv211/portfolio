@@ -18,12 +18,12 @@ import StandardTemplates from '../pdfs/StandardTemplatesFuntionObjects_AmanVerma
 import { Link } from 'react-router-dom'
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const CppNotes = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "CPP Notes | Aman's Portfolio";
         AOS.init();
         AOS.refresh();
     }, []);
@@ -42,6 +42,10 @@ const CppNotes = (props) => {
         <>
             <NotesNav setImg={cpp} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16 scroll-mt-[1500px]`} id='myEducation'>
+                <Helmet>
+                    <title>CPP Notes | Aman's Portfolio</title>
+                    <meta name="description" content="Download free, high-quality PDF notes for C++. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
+                </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>C++ Notes</h1>
                 <p className='text-justify md:text-lg'>Hello there, aspiring programmers and curious minds! 👋 In this "Notes" section, I've curated a collection of beginner-friendly resources that cover the essentials of different programming languages. Coding is about creativity and problem-solving. If you have any questions feel free to reach out. Wishing you an incredible learning experience and a future filled with endless possibilities!</p>
 

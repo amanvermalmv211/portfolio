@@ -15,7 +15,7 @@ import { TiDocumentText } from 'react-icons/ti';
 import { RiWhatsappFill } from 'react-icons/ri';
 import AOS from 'aos';
 import "aos/dist/aos.css";
-
+import { Helmet } from 'react-helmet-async';
 
 const Home = (props) => {
 
@@ -23,7 +23,6 @@ const Home = (props) => {
   const el = React.useRef(null);
 
   useEffect(() => {
-    document.title = "Aman's Portfolio";
     AOS.init();
     AOS.refresh();
   }, []);
@@ -59,6 +58,12 @@ const Home = (props) => {
     <div className={`${props.mode === "light" ? "text-gray-700" : "text-white"}`}>
       {/* greeting Section */}
       <section className='scroll-mt-[1500px]' id='homesec'>
+
+        <Helmet>
+          <title>Aman's Portfolio</title>
+          <meta name="description" content="Aman Verma's personal portfolio built with React. Showcasing modern web development projects using React, MERN stack, Tailwind CSS, and TypeScript with a focus on responsive design and clean UI." />
+        </Helmet>
+
         <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" ? "bg-gray-100" : "bg-gray-950"} relative overflow-hidden md:h-[420px]`}>
 
           <div className={`h-[650px] md:h-[450px] w-[650px] md:w-[450px] ${props.mode === "light" ? "bg-orange-300/40" : "bgC2"} absolute -top-1/2 -right-10 md:right-0 rounded-3xl rotate-45`}></div>
@@ -88,7 +93,7 @@ const Home = (props) => {
 
         <h1 className='text-3xl md:text-4xl font-bold text-center m-4'>Education</h1>
 
-        <p className='text-justify md:text-center text-lg md:text-xl lg:w-5/6 mx-auto pb-4'>Completed my schooling from <Link to="https://navodaya.gov.in/nvs/nvs-school/GHAZIPUR/en/about_us/About-JNV" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Jawahar Navodaya Vidyalaya</Link> Ghazipur ( U.P. ), followed by a Bachelor's degree (Honours) in Computer Science from <Link to="https://www.du.ac.in/index.php?page=About-DU" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Delhi University.</Link> Currently pursuing an MCA in Information Technology from  <Link to="https://www.du.ac.in/index.php?page=About-DU" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Jain University.</Link></p>
+        <p className='text-justify md:text-center text-lg md:text-xl lg:w-5/6 mx-auto pb-4'>Completed my schooling from <Link to="https://navodaya.gov.in/nvs/nvs-school/GHAZIPUR/en/about_us/About-JNV" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Jawahar Navodaya Vidyalaya</Link> Ghazipur ( U.P. ), followed by a Bachelor's degree (Honours) in Computer Science from <Link to="https://www.du.ac.in/index.php?page=About-DU" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Delhi University.</Link> Currently pursuing an MCA in Information Technology from  <Link to="https://www.jainuniversity.ac.in" target='_blank' className={`${props.mode === "light" ? "text-orange-500" : "text-blue-500"} font-semibold`}>Jain University.</Link></p>
 
         <div className="flex flex-wrap items-center justify-center gap-16 p-2 m-4">
 

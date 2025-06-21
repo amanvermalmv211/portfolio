@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 
 const FooterLinks = [
     { name: "Home", link: "/#homesec" },
@@ -47,6 +48,9 @@ const Footer = (props) => {
 
     return (
         <div className="text-white bgC1 select-none">
+            <Helmet>
+                <meta name="description" content="Get in touch with Aman Verma. Contact via phone or visit the address mentioned in the footer. Available for web development projects and collaborations." />
+            </Helmet>
             {/* company details */}
             <div className="py-8">
                 <div className={`flex items-center justify-center w-60 mx-auto`} data-aos="zoom-in" data-aos-duration="800">
@@ -115,7 +119,7 @@ const Footer = (props) => {
                         </div>
                     </div>
 
-                    <div className="text-sm absolute bottom-0 text-center">&copy; {new Date().getFullYear()} - Aman Portfolio All rights reserved.</div>
+                    <div className="text-sm absolute bottom-0 text-center">&copy; {new Date().getFullYear()} - Aman's - Portfolio All rights reserved.</div>
 
                 </div>
             </div>

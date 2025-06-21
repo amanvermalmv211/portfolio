@@ -15,6 +15,7 @@ import JavaNotes from './portcomp/JavaNotes';
 import KotlinNotes from './portcomp/KotlinNotes';
 import PythonNotes from './portcomp/PythonNotes';
 import MySQL from './portcomp/MySQL';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
   }
 
   return (
-    <div>
+    <HelmetProvider>
       <Router>
         <Navbar mode={mode} toggleMode={toggleMode} />
 
@@ -54,7 +55,7 @@ function App() {
         <Footer mode={mode} />
 
       </Router>
-    </div>
+    </HelmetProvider>
 
   );
 }

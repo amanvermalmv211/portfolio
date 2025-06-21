@@ -12,12 +12,12 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet-async';
 
 const KotlinNotes = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        document.title = "Kotlin Notes | Aman's Portfolio";
         AOS.init();
         AOS.refresh();
     }, []);
@@ -33,6 +33,10 @@ const KotlinNotes = (props) => {
         <>
             <NotesNav setImg={kotlin} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16`}>
+                <Helmet>
+                    <title>Kotlin Notes | Aman's Portfolio</title>
+                    <meta name="description" content="Download free, high-quality PDF notes for Kotlin. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
+                </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>Kotlin Notes</h1>
                 <p className='text-justify md:text-lg'>Kotlin is a statically-typed programming language made by Czech company JetBrains. It has been known for being used in making Android applications. On 7 May 2019, Google announced that the Kotlin programming language was now its preferred language for Android app developers. Kotlin is designed to interoperate fully with Java, and the JVM version of Kotlin's standard library depends on the Java Class Library, but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript (e.g., for frontend web applications using React) or native code via LLVM (e.g., for native iOS apps sharing business logic with Android apps).</p>
 
