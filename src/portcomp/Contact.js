@@ -20,7 +20,7 @@ const Contact = (props) => {
         <>
             <section className="contact bg-blend-darken h-fit flex flex-col items-center justify-center md:py-28 py-12 px-4 scroll-mt-[1500px]" id='contact' >
                 <Helmet>
-                    <title>Contact Page | Aman's Portfolio</title>
+                    <title>Contact Page | Aman's Portfolio 24x7</title>
                     <meta name="description" content="Fill out the contact form to reach Aman Verma for web development projects, collaborations, or inquiries. I'm just a message away!" />
                 </Helmet>
                 <h1 className={`text-5xl my-4 mb-12 font-bold text-gray-300 drop-shadow-[1px_2px_2px_rgb(0,0,0)] font-serif`} data-aos="zoom-in" data-aos-duration="1000">Get in touch</h1>

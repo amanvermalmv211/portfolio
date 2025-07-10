@@ -33,7 +33,7 @@ const MySQL = (props) => {
             <NotesNav setImg={sql} mode={props.mode} />
             <section className={`myNotes ${props.mode === "light" ? "text-gray-700 bg-gray-100" : "text-white bg-gray-900"} flex flex-col items-center justify-center p-4 md:p-10 pb-16`}>
                 <Helmet>
-                    <title>MySQL Notes | Aman's Portfolio</title>
+                    <title>MySQL Notes | Aman's Portfolio 24x7</title>
                     <meta name="description" content="Download free, high-quality PDF notes for SQL. Curated by Aman Verma to help students and developers learn and revise key programming concepts easily." />
                 </Helmet>
                 <h1 className='font-semibold text-3xl md:text-4xl text-center my-2'>MySQL Notes</h1>

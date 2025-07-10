@@ -60,7 +60,7 @@ const Home = (props) => {
       <section className='scroll-mt-[1500px]' id='homesec'>
 
         <Helmet>
-          <title>Aman's Portfolio</title>
+          <title>Aman's Portfolio 24x7</title>
           <meta name="description" content="Aman Verma's personal portfolio built with React. Showcasing modern web development projects using React, MERN stack, Tailwind CSS, and TypeScript with a focus on responsive design and clean UI." />
         </Helmet>
 
