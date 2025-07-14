@@ -16,6 +16,7 @@ import { RiWhatsappFill } from 'react-icons/ri';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { Helmet } from 'react-helmet-async';
+import TwinklingStars from './TwinklingStars';
 
 const Home = (props) => {
 
@@ -64,7 +65,9 @@ const Home = (props) => {
           <meta name="description" content="Aman Verma's personal portfolio built with React. Showcasing modern web development projects using React, MERN stack, Tailwind CSS, and TypeScript with a focus on responsive design and clean UI." />
         </Helmet>
 
-        <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" ? "bg-gray-100" : "bg-gray-950"} relative overflow-hidden md:h-[420px]`}>
+        <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" ? "bg-gray-100" : ""} relative overflow-hidden md:h-[420px]`}>
+
+          <TwinklingStars />
 
           <div className={`h-[650px] md:h-[450px] w-[650px] md:w-[450px] ${props.mode === "light" ? "bg-orange-300/40" : "bgC2"} absolute -top-1/2 -right-10 md:right-0 rounded-3xl rotate-45`}></div>
 
@@ -82,7 +85,7 @@ const Home = (props) => {
 
             <div className="home-btn flex justify-center items-center my-5">
               <Link to={myResume} className={`shadow-md font-semibold w-36 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mx-2 text-lg py-1`} target="_blank" data-aos="zoom-in-up" data-aos-duration="800">Resume <TiDocumentText size={23} className='inline-block mb-0.5' /> </Link>
-              <Link to="https://wa.me/916306805527" target="_blank" className={`shadow-md font-semibold w-36 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mx-2 text-lg py-1`} data-aos="zoom-in-up" data-aos-duration="800">WhatsApp <RiWhatsappFill size={23} className='inline-block text-green-600 mb-0.5' /></Link>
+              <Link to="https://wa.me/916306805527" target="_blank" className={`shadow-md font-semibold w-36 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mx-2 text-lg py-1`} data-aos="zoom-in-up" data-aos-duration="800">WhatsApp <RiWhatsappFill size={23} className='inline-block text-green-500 mb-0.5' /></Link>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
+import TwinklingStars from "./TwinklingStars";
 
 const FooterLinks = [
     { name: "Home", link: "/#homesec" },
@@ -47,10 +48,11 @@ const Footer = (props) => {
     }, []);
 
     return (
-        <div className="text-white bgC1 select-none">
+        <div className="relative w-full overflow-hidden text-white">
             <Helmet>
                 <meta name="description" content="Get in touch with Aman Verma. Contact via phone or visit the address mentioned in the footer. Available for web development projects and collaborations." />
             </Helmet>
+            <TwinklingStars/>
             {/* company details */}
             <div className="py-8">
                 <div className={`flex items-center justify-center w-60 mx-auto`} data-aos="zoom-in" data-aos-duration="800">
