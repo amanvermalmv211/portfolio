@@ -65,7 +65,7 @@ const Home = (props) => {
           <meta name="description" content="Aman Verma's personal portfolio built with React. Showcasing modern web development projects using React, MERN stack, Tailwind CSS, and TypeScript with a focus on responsive design and clean UI." />
         </Helmet>
 
-        <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" ? "bg-gray-100" : ""} relative overflow-hidden md:h-[420px]`}>
+        <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" && "bg-gray-100"} relative overflow-hidden md:h-[420px]`}>
 
           <TwinklingStars />
 

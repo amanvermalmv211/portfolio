@@ -127,7 +127,7 @@ const Skills = (props) => {
         </SwiperSlide>
       </Swiper>
 
-      <div className={`grid lg:grid-cols-2 gap-8 my-8 ${props.mode === "light" ? "text-gray-700" : "text-gray-700"} select-none overflow-hidden`}>
+      <div className={`grid lg:grid-cols-2 xl:grid-cols-3 gap-8 my-8 ${props.mode === "light" ? "text-gray-700" : "text-gray-700"} select-none overflow-hidden`}>
         {
           skillData.map((data, idx) => {
             return <div key={idx} className={`w-full flex items-center justify-center rounded-xl overflow-hidden p-2 space-x-1 ${idx % 2 !== 0 && "max-lg:flex-row-reverse"} ${props.mode === "light" ? "bg-orange-200" : "bg-blue-200"}`} data-aos={`${idx % 2 !== 0 ? "fade-left" : "fade-right"}`} data-aos-duration="800">
