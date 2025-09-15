@@ -49,14 +49,14 @@ const Project = (props) => {
 
           {
             projects.map((project, idx) => {
-              return <div key={idx} className={`border-t-4 border-b-4 rounded-xl border-double p-2 h-80 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-white" : "border-blue-600 bg-blue-950"} select-none`} data-aos={`${idx % 2 !== 0 ? "flip-left" : "flip-right"}`} data-aos-duration="800">
+              return <div key={idx} className={`border-t-4 border-b-4 rounded-xl border-double p-2 h-80 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-white" : "border-blue-600 bg-blue-950"} select-none relative`} data-aos={`${idx % 2 !== 0 ? "flip-left" : "flip-right"}`} data-aos-duration="800">
                 <div className="h-16 w-20 mx-auto">
                   <img src={project.img} alt="" className={`object-contain w-full h-full ${idx === 0 && "scale-[2.3]"} ${idx === 5 && "scale-[1.8]"} ${idx === 7 && "scale-[1.6]"} ${idx === 9 && "scale-[1.5]"}`} />
                 </div>
                 <h3 className='font-bold text-lg -mb-1'>{project.name}</h3>
                 <p className='mb-1'>{project.heading}</p>
                 <p className='text-justify text-sm'>{project.disc}</p>
-                <div className={`mt-2 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline flex items-center justify-around text-sm`}>
+                <div className={`absolute bottom-3 left-0 w-full ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline flex items-center justify-around text-sm`}>
                   {project.feRepo && <Link to={project.feRepo} target='_blank'>FE Code</Link>}
                   {project.beRepo && <Link to={project.beRepo} target='_blank'>BE Code</Link>}
                   <Link to={project.link} target='_blank'>Live Site</Link>

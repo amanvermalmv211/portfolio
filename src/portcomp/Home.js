@@ -16,7 +16,7 @@ import { RiWhatsappFill } from 'react-icons/ri';
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { Helmet } from 'react-helmet-async';
-import TwinklingStars from './TwinklingStars';
+import TwinklingStars, { TwinklingOrange } from './TwinklingStars';
 
 const Home = (props) => {
 
@@ -65,9 +65,11 @@ const Home = (props) => {
           <meta name="description" content="Aman Verma's personal portfolio built with React. Showcasing modern web development projects using React, MERN stack, Tailwind CSS, and TypeScript with a focus on responsive design and clean UI." />
         </Helmet>
 
-        <div className={`flex items-center justify-center flex-col md:flex-row ${props.mode === "light" && "bg-gray-100"} relative overflow-hidden md:h-[420px]`}>
+        <div className={`flex items-center justify-center flex-col md:flex-row relative overflow-hidden md:h-[420px]`}>
 
-          <TwinklingStars />
+          {
+            props.mode === "light" ? <TwinklingOrange /> : <TwinklingStars />
+          }
 
           <div className={`h-[650px] md:h-[450px] w-[650px] md:w-[450px] ${props.mode === "light" ? "bg-orange-300/40" : "bgC2"} absolute -top-1/2 -right-10 md:right-0 rounded-3xl rotate-45`}></div>
 
@@ -75,7 +77,7 @@ const Home = (props) => {
             <img src={avtar} alt="My Avtar" className='object-contain mx-auto w-60 md:w-80' data-aos="zoom-in-down" data-aos-duration="800" />
           </div>
 
-          <div className="w-full md:w-3/5 p-4 relative">
+          <div className="w-full md:w-3/5 xl:w-3/6 p-4 relative">
             <div className={`text-${props.mode === "light" ? "black" : "white"} h-48 lg:h-40`}>
               <div id="typed-strings">
                 <p><strong className='text-3xl md:text-4xl'>Unveiling Creativity :  A journey through my Portfolio.</strong> <br /> <span className='text-xl md:text-2xl'>Hi, I'm <span className={`font-bold ${props.mode === "light" ? "text-orange-500" : "text-blue-500"}`}>Aman Verma</span> and I find joy in every aspect of <span className={`font-bold ${props.mode === "light" ? "text-orange-500" : "text-blue-500"}`}>web development.</span></span> </p>
@@ -100,35 +102,35 @@ const Home = (props) => {
 
         <div className="flex flex-wrap items-center justify-center gap-16 p-2 m-4">
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"}`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
             <FaSchool className='mx-auto' size={50} />
             <h3 className='font-bold text-[17px] my-2'>Secondary (10th)</h3>
             <p className='m-1'>94.2%</p>
             <p className='m-1'>Year: 2018-2019</p>
-            <div className={`gradeLink mt-14 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
+            <div className={`absolute w-full bottom-6 left-0 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
               <Link to={X} target='_parent'>Result</Link>
             </div>
           </div>
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"}`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
             <FaSchoolFlag className='mx-auto' size={50} />
 
             <h3 className='font-bold text-[17px] my-2'>Senior Secondary (12th)</h3>
             <p className='m-1'>(PCM)</p>
             <p className='m-1'>89.2%</p>
             <p className='m-1'>Year: 2020-2021</p>
-            <div className={`gradeLink mt-7 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
+            <div className={`absolute w-full bottom-6 left-0 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
               <Link to={XII} target='_parent'>Result</Link>
             </div>
           </div>
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"}`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
             <IoIosSchool className='mx-auto' size={50} />
 
             <h3 className='font-bold text-[17px] my-2'>B.Sc.(Hons.) CS</h3>
             <p className='m-1'>7.91 CGPA</p>
             <p className='m-1'>Year: 2021-2024</p>
-            <div className={`gradeLink mt-14 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
+            <div className={`absolute w-full bottom-6 left-0 ${props.mode === "light" ? "text-orange-500" : "text-blue-500"} underline`}>
               <Link to={clgRes} target='_parent'>Marksheet</Link>
             </div>
           </div>

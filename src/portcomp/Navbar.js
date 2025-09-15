@@ -66,7 +66,7 @@ const Navbar = (props) => {
         <div className='flex items-center space-x-1 p-1.5 md:p-3'>
           <Link to="/#homesec" className={`flex items-center justify-center lg:border-r-2 ${props.mode === "light" ? "border-blue-600" : "border-yellow-600"} pr-4`}>
             <img src={logo} alt="portfolio" className={`object-contain w-4 h-4 scale-[6] mx-2 ${props.mode === "light" ? "invert" : "invert-0"}`} />
-            <span className={`ml-1 font-semibold text-lg pt-1 font-serif ${props.mode === "light" ? "text-blue-600" : "text-yellow-500"}`}> - Portfolio</span>
+            <span className={`ml-1 font-semibold text-lg pt-1 ${props.mode === "light" ? "text-blue-600" : "text-yellow-500"}`}> - Portfolio</span>
           </Link>
 
           <ul className='hidden lg:flex pl-4 space-x-10 font-semibold text-lg'>
@@ -78,14 +78,18 @@ const Navbar = (props) => {
           </ul>
         </div>
 
-        <div className="absolute top-2 lg:top-4 right-16 lg:right-36 lg:items-center lg:cursor-pointer" onClick={props.toggleMode}>
-          {
-            props.mode === "light" ? <MdDarkMode size={26} /> : <MdLightMode size={26} className='text-yellow-500' />
-          }
-        </div>
+        <div className='flex items-center justify-center gap-4 md:gap-8'>
+          <div className={`flex items-center w-14 h-7 p-1 ${props.mode === "light" ? "bg-blue-950" : "bg-orange-300"} rounded-full lg:cursor-pointer transition-all duration-300 lg:mr-20`} onClick={props.toggleMode}>
+            <span className={`h-5 w-5 bg-white rounded-full transition-all ${props.mode === "dark" && "ml-7"} flex items-center justify-center duration-300`}>
+              {
+                props.mode === "light" ? <MdLightMode className='text-yellow-500' /> : <MdDarkMode className='scale-110 text-gray-800' />
+              }
+            </span>
+          </div>
 
-        <div className='lg:hidden flex items-center justify-center space-x-8 px-2'>
-          <HiMiniBars3CenterLeft onClick={() => { setOpen(!open) }} size={26} className={`${props.mode === "light" ? "" : "text-yellow-500"}`} />
+          <div className='lg:hidden flex items-center justify-center space-x-8 px-2'>
+            <HiMiniBars3CenterLeft onClick={() => { setOpen(!open) }} size={26} className={`${props.mode === "light" ? "" : "text-yellow-500"}`} />
+          </div>
         </div>
 
       </div>

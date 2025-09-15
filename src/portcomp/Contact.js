@@ -23,7 +23,7 @@ const Contact = (props) => {
                     <title>Contact Page | Aman's Portfolio 24x7</title>
                     <meta name="description" content="Fill out the contact form to reach Aman Verma for web development projects, collaborations, or inquiries. I'm just a message away!" />
                 </Helmet>
-                <h1 className={`text-5xl my-4 mb-12 font-bold text-gray-300 drop-shadow-[1px_2px_2px_rgb(0,0,0)] font-serif`} data-aos="zoom-in" data-aos-duration="1000">Get in touch</h1>
+                <h1 className={`text-5xl my-4 mb-12 font-bold text-gray-300 drop-shadow-[1px_2px_2px_rgb(0,0,0)]`} data-aos="zoom-in" data-aos-duration="1000">Get in touch</h1>
                 <form action="https://formspree.io/f/mpzgqqkz" method="post" className="container flex flex-col items-center justify-center max-w-sm rounded-xl p-6 border-2 border-white/20 bg-black bg-opacity-25 text-white shadow-md" data-aos="zoom-in" data-aos-duration="1000">
                     <div className="box border-b-2 border-white my-4 w-full">
                         <FaPerson size={25} className="inline-block mr-1 text-blue-500" />
