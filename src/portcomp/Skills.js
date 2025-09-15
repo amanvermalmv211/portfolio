@@ -134,7 +134,7 @@ const Skills = (props) => {
               <div className={`w-2/6 lg:w-1/5 h-28 p-2`}>
                 <img src={data.img} alt={data.name} className='w-full h-full object-contain drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)]' />
               </div>
-              <div className={`w-3/5 lg:w-4/5`}>
+              <div className={`w-4/5`}>
                 <p className='text-justify font-medium'>{data.disc}</p>
               </div>
             </div>
