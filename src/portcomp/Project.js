@@ -49,7 +49,7 @@ const Project = (props) => {
 
           {
             projects.map((project, idx) => {
-              return <div key={idx} className={`border-t-4 border-b-4 rounded-xl border-double p-2 h-80 hover:shadow-lg text-center w-64 ${props.mode === "light" ? "border-orange-500 bg-white" : "border-blue-600 bg-blue-950 shadow-gray-300/50"} select-none relative`} data-aos={`${idx % 2 !== 0 ? "flip-left" : "flip-right"}`} data-aos-duration="800">
+              return <div key={idx} className={`border-t-4 border-b-4 rounded-xl border-double p-2 h-80 shadow-lg text-center w-64 ${props.mode === "light" ? "border-orange-500 bg-white hover:shadow-gray-400" : "border-blue-600 bg-blue-950 hover:shadow-blue-900"} select-none relative`} data-aos={`${idx % 2 !== 0 ? "flip-left" : "flip-right"}`} data-aos-duration="800">
                 <div className="h-16 w-20 mx-auto">
                   <img src={project.img} alt="" className={`object-contain w-full h-full ${idx === 0 && "scale-[2.3]"} ${idx === 5 && "scale-[1.8]"} ${idx === 7 && "scale-[1.6]"} ${idx === 9 && "scale-[1.5]"}`} />
                 </div>

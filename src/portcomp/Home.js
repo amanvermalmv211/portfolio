@@ -17,6 +17,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import { Helmet } from 'react-helmet-async';
 import TwinklingStars, { TwinklingOrange } from './TwinklingStars';
+import { TbBrandGithubFilled } from 'react-icons/tb';
 
 const Home = (props) => {
 
@@ -73,7 +74,7 @@ const Home = (props) => {
 
           <div className={`h-[650px] md:h-[450px] w-[650px] md:w-[450px] ${props.mode === "light" ? "bg-orange-300/40" : "bgC2"} absolute -top-1/2 -right-10 md:right-0 rounded-3xl rotate-45`}></div>
 
-          <div className="w-full md:w-2/5 p-8 relative">
+          <div className="w-full md:w-2/5 p-8 relative h-72 lg:h-full">
             <img src={avtar} alt="My Avtar" className='object-contain mx-auto w-60 md:w-80' data-aos="zoom-in-down" data-aos-duration="800" />
           </div>
 
@@ -102,7 +103,7 @@ const Home = (props) => {
 
         <div className="flex flex-wrap items-center justify-center gap-16 p-2 m-4">
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-lg hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50 hover:shadow-gray-400" : "border-blue-600 bg-blue-950 hover:shadow-blue-900"} relative`} data-aos="flip-left" data-aos-duration="800">
             <FaSchool className='mx-auto' size={50} />
             <h3 className='font-bold text-[17px] my-2'>Secondary (10th)</h3>
             <p className='m-1'>94.2%</p>
@@ -112,7 +113,7 @@ const Home = (props) => {
             </div>
           </div>
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-lg hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50 hover:shadow-gray-400" : "border-blue-600 bg-blue-950 hover:shadow-blue-900"} relative`} data-aos="flip-left" data-aos-duration="800">
             <FaSchoolFlag className='mx-auto' size={50} />
 
             <h3 className='font-bold text-[17px] my-2'>Senior Secondary (12th)</h3>
@@ -124,7 +125,7 @@ const Home = (props) => {
             </div>
           </div>
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"} relative`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-lg hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50 hover:shadow-gray-400" : "border-blue-600 bg-blue-950 hover:shadow-blue-900"} relative`} data-aos="flip-left" data-aos-duration="800">
             <IoIosSchool className='mx-auto' size={50} />
 
             <h3 className='font-bold text-[17px] my-2'>B.Sc.(Hons.) CS</h3>
@@ -135,7 +136,7 @@ const Home = (props) => {
             </div>
           </div>
 
-          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-md hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50" : "border-blue-600 bg-blue-950"}`} data-aos="flip-left" data-aos-duration="800">
+          <div className={`border-t-4 border-b-4 rounded-xl border-double flex flex-col p-2 h-72 shadow-lg hover:scale-[1.03] text-center w-60 ${props.mode === "light" ? "border-orange-500 bg-gray-50 hover:shadow-gray-400" : "border-blue-600 bg-blue-950 hover:shadow-blue-900"}`} data-aos="flip-left" data-aos-duration="800">
             <IoIosSchool className='mx-auto' size={50} />
 
             <h3 className='font-bold text-[17px] my-2'>Masters In Computer Aplication</h3>
@@ -160,7 +161,11 @@ const Home = (props) => {
                 where I breathe life into ideas, I find joy in every aspect of web development - from
                 conceptualizing intuitive designs to implementing robust back-end functionality. Feel free to explore my portfolio to discover some of the exciting projects I've made. I'm always excited to connect with like-minded individuals, so don't hesitate to reach out if you want to collaborate or discuss technology.</p>
             </div>
-            <Link to={myResume} className={`shadow-md font-semibold w-36 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mt-2 text-lg py-1`} target="_blank" data-aos="fade-right" data-aos-duration="800">Resume <TiDocumentText size={23} className='inline-block mb-0.5' /> </Link>
+            <div className='flex items-center justify-center gap-4'>
+              <Link to={myResume} className={`shadow-md font-semibold w-32 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mt-2 text-lg py-1`} target="_blank" data-aos="fade-right" data-aos-duration="1000">Resume <TiDocumentText size={23} className='inline-block mb-0.5' /> </Link>
+
+              <Link to="https://github.com/amanvermalmv211" className={`shadow-md font-semibold w-32 text-center rounded-md ${props.mode === "light" ? "bg-orange-300 hover:bg-orange-400" : "bg-blue-700 hover:bg-blue-800"} mt-2 text-lg py-1`} target="_blank" data-aos="fade-right" data-aos-duration="800">GitHub <TbBrandGithubFilled size={23} className='inline-block mb-0.5 text-gray-700 bg-white rounded-full pt-1' /> </Link>
+            </div>
           </div>
 
           <div className="lg:w-2/6 w-full mb-8 lg:mb-36 overflow-hidden">

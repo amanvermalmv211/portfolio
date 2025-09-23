@@ -82,7 +82,7 @@ const Navbar = (props) => {
           <div className={`flex items-center w-14 h-7 p-1 ${props.mode === "light" ? "bg-blue-950" : "bg-orange-300"} rounded-full lg:cursor-pointer transition-all duration-300 lg:mr-20`} onClick={props.toggleMode}>
             <span className={`h-5 w-5 bg-white rounded-full transition-all ${props.mode === "dark" && "ml-7"} flex items-center justify-center duration-300`}>
               {
-                props.mode === "light" ? <MdLightMode className='text-yellow-500' /> : <MdDarkMode className='scale-110 text-gray-800' />
+                props.mode === "light" ? <MdLightMode className='text-yellow-500' /> : <MdDarkMode className='scale-110 text-blue-900' />
               }
             </span>
           </div>

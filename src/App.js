@@ -7,14 +7,14 @@ import {
   Route
 } from "react-router-dom";
 import Home from './portcomp/Home';
-import Project from './portcomp/Project';
+import MySQL from './portcomp/MySQL';
 import Footer from './portcomp/Footer';
+import Project from './portcomp/Project';
 import Contact from './portcomp/Contact';
 import CppNotes from './portcomp/CppNotes';
 import JavaNotes from './portcomp/JavaNotes';
 import KotlinNotes from './portcomp/KotlinNotes';
 import PythonNotes from './portcomp/PythonNotes';
-import MySQL from './portcomp/MySQL';
 import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
