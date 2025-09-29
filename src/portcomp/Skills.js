@@ -2,12 +2,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import mongo from '../Images/mongo.png';
 
 import '../App.css';
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 import skill from '../Images/skill.png';
 import cpp from '../Images/cpp.png';
@@ -37,10 +38,107 @@ const Skills = (props) => {
     <section className={`skills flex items-center flex-col p-4 md:px-10 justify-around text-center font-bold ${props.mode === "light" ? "text-gray-700" : "bg-gray-900"} scroll-mt-12`} id="mySkills">
       <div className="skillImg flex w-40 h-20 justify-center items-center">
         <h1 className='text-3xl md:text-4xl font-bold m-2'>Skills</h1>
-        <img src={skill} alt="" className='w-20 h-20 aspect-[2/3] object-contain scale-150' />
+        <img src={skill} alt="" className='w-20 h-20 aspect-[2/3] object-contain scale-150 select-none' />
       </div>
 
       <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={{ el: '.swiper-pagination', clickable: true }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          clickable: true
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="mySwiper w-[100%] md:w-[60%] mb-8 select-none"
+      >
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={js} alt='JavaScript' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>JavaScript</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={reactjsicon} alt='React JS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>React JS</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" alt='Node JS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Node JS</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={tailwindicon} alt='Tailwind CSS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Tailwind CSS</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={mongo} alt='MongoDB' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>MongoDB</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src="https://icons.getbootstrap.com/assets/img/icons-hero.png" alt='Bootstrap' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Bootstrap</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={webDev} alt='Web Development' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Web Development</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={cpp} alt='CPP' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>C++</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={python} alt='Python' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Python</p>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
+          <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
+            <img src={java} alt='Java' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Java</p>
+          </div>
+        </SwiperSlide>
+
+        <div className='slider-controler h-10 flex items-center justify-center'>
+          <div className="swiper-pagination mt-4"></div>
+        </div>
+      </Swiper>
+
+      {/* <Swiper
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
@@ -58,74 +156,74 @@ const Skills = (props) => {
       >
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={js} alt='JavaScript' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={js} alt='JavaScript' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>JavaScript</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={reactjsicon} alt='React JS' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={reactjsicon} alt='React JS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>React JS</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" alt='Node JS' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" alt='Node JS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Node JS</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={tailwindicon} alt='Tailwind CSS' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={tailwindicon} alt='Tailwind CSS' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Tailwind CSS</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={mongo} alt='MongoDB' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={mongo} alt='MongoDB' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>MongoDB</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src="https://icons.getbootstrap.com/assets/img/icons-hero.png" alt='Bootstrap' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src="https://icons.getbootstrap.com/assets/img/icons-hero.png" alt='Bootstrap' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Bootstrap</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={webDev} alt='Web Development' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={webDev} alt='Web Development' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Web Development</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={cpp} alt='CPP' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={cpp} alt='CPP' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>C++</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={python} alt='Python' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={python} alt='Python' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Python</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className={`bg-center bg-cover ${props.mode === "light" ? "bg-orange-300" : "bg-blue-300"} rounded-xl`}>
           <div className="makeCenter flex flex-col justify-start mt-2 space-y-2 items-center">
-            <img src={java} alt='Java' className='flex w-20 h-20 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
+            <img src={java} alt='Java' className='flex w-full px-4 drop-shadow-[2px_4px_4px_rgba(0,0,0,0.8)] object-contain aspect-[3/2]' />
             <p className='drop-shadow-[1.5px_1.5px_1.5px_rgba(0,0,0,0.6)]'>Java</p>
           </div>
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
 
       <div className={`grid lg:grid-cols-2 xl:grid-cols-3 gap-8 my-8 ${props.mode === "light" ? "text-gray-700" : "text-gray-700"} select-none overflow-hidden`}>
         {
